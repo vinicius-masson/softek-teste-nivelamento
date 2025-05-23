@@ -18,7 +18,7 @@ git clone https://github.com/vinicius-masson/softek-teste-nivelamento.git
 
 - Navigate to the "Questao5" folder
 - Open command prompt in that directory and run the following command
-- 
+  
 ```bash
 dotnet run
 ```
