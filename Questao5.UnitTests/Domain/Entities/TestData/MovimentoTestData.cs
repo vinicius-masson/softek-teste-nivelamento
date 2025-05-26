@@ -27,7 +27,7 @@ namespace Questao5.UnitTests.Domain.Entities.TestData
 
         // <summary>
         /// Generates a valid Movimento entity with randomized data.
-        /// The generated user will have all properties populated with valid values
+        /// The generated movimento will have all properties populated with valid values
         /// that meet the system's validation requirements.
         /// </summary>
         /// <returns>A valid Movimento entity with randomly generated data.</returns>
