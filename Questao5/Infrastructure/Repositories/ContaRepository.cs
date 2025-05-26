@@ -1,7 +1,5 @@
 ﻿using Dapper;
 using Microsoft.Data.Sqlite;
-using NSubstitute.Core;
-using Questao5.Domain.DTOs;
 using Questao5.Domain.Entities;
 using Questao5.Domain.Enumerators;
 using Questao5.Domain.Repositories;
