@@ -35,10 +35,10 @@ namespace Questao5.API.Controllers
         /// <param name="request">The movimento creation request</param>
         /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>The created movimento id</returns>
-        [HttpPost("CreateMovimento")]
+        [HttpPost]
         [ProducesResponseType(typeof(Guid), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> CreateMovimento([FromBody] CreateMovimentoCommand request, CancellationToken cancellationToken)
+        public async Task<IActionResult> Create([FromBody] CreateMovimentoCommand request, CancellationToken cancellationToken)
         {
             var validator = new CreateMovimentoCommandValidator();
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
@@ -52,7 +52,7 @@ namespace Questao5.API.Controllers
         }
 
         /// <summary>
-        /// Retrieves the movimentos for an account by accountId
+        /// Retrieves account details, including balance (calculated from linked movements)
         /// </summary>
         /// <param name="id">The unique identifier of the account</param>
         /// <param name="cancellationToken">Cancellation token</param>
@@ -61,7 +61,7 @@ namespace Questao5.API.Controllers
         [ProducesResponseType(typeof(ApiResponseWithData<GetContaQuery>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> GetConta([FromRoute] Guid idContaCorrente, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetContaWithBalance([FromRoute] Guid idContaCorrente, CancellationToken cancellationToken)
         {
             var request = new GetContaQuery { IdContaCorrente = idContaCorrente };
             var validator = new GetContaQueryValidator();
